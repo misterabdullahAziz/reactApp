@@ -7,6 +7,12 @@ class Menu extends Component{
         this.state = {
             selectedDish : null
         }
+        console.log("Menu Constructor");
+    }
+
+    componentDidMount(){
+        console.log("Menu componentDidMount");
+        
     }
 
     oneDishSelect (dish){
@@ -35,7 +41,7 @@ class Menu extends Component{
     }
 
     render(){
-
+        console.log("Menu reder");        
         const menu = this.props.dishes.map((dish) => {
             return (
                 <div key={dish.id} className="col-12 col-md-5 mt-1">
