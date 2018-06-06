@@ -4,7 +4,7 @@ import Menu from './MenuComponent';
 import DishdetailComponent from './DishdetailComponent';
 import {DISHES} from '../shared/dishes';
 
-//Act like an Container component
+//Act like an Container Components
 
 class Main extends Component {
 
