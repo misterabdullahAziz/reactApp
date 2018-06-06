@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {Card, CardImg, CardImgOverlay, CardText, CardTitle, CardBody} from 'reactstrap'
+import {Card, CardImg, CardText, CardTitle, CardBody} from 'reactstrap'
 
 class DishdetailComponent extends Component{
     constructor(props){
@@ -17,11 +17,12 @@ class DishdetailComponent extends Component{
                 return (
                     <div key={comment.id}>
                         <p>{comment.comment}</p>
-                        <p> --{comment.author} , {comment.date}</p>
+                        <p> --{comment.author} , {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(comment.date)))}</p>
                     </div>
                 );
             });
             return (
+                <div className='container'>
                 <div className='row'>
                     <div className="col-12 col-md-5 mt-1">
                         <Card>
@@ -36,6 +37,7 @@ class DishdetailComponent extends Component{
                         <h1>Comments</h1>
                         {comments}
                     </div>                    
+                </div>
                 </div>
                 
             );
